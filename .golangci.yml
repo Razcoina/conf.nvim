@@ -1,0 +1,28 @@
+version: "2"
+
+run:
+  tests: true
+
+linters:
+  default: all
+  disable:
+    - wsl
+  settings:
+    lll:
+      line-length: 120
+      tab-width: 2
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+    - golines
+  settings:
+    gofumpt:
+      extra-rules: true
+    golines:
+      max-len: 120
+      tab-len: 2
+      shorten-comments: true
+      reformat-tags: true
+      chain-split-dots: true

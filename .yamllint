@@ -1,0 +1,6 @@
+---
+
+extends: default
+rules:
+  comments:
+    min-spaces-before: 1

@@ -1,0 +1,13 @@
+{
+  "parser": {
+    "\\.vue$": "@markuplint/vue-parser",
+    "\\.php$": "@markuplint/php-parser"
+  },
+  "specs": {
+    "\\.vue$": "@markuplint/vue-spec"
+  },
+  "extends": [
+    "markuplint:recommended",
+    "markuplint:recommended-vue"
+  ]
+}
