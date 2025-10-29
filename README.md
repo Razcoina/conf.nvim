@@ -113,6 +113,27 @@ nvim
 That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
 the current plugin status. Hit `q` to close the window.
 
+Also use `:Mason` to check the installation progress of Mason packages.
+
+#### Manual packages
+
+Some packages refuse to behave when normally installed through Mason and should
+as such be installed manually. This configuration uses one such package:
+
+- `local-lua-debugger-vscode` to debug lua code.
+
+To install this package, follow these instructions: (Linux only)
+
+```sh
+cd 
+git clone https://github.com/tomblind/local-lua-debugger-vscode "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/manual/local-lua-debugger-vscode
+cd "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/manual/local-lua-debugger-vscode
+npm install
+npm run build
+```
+
+After restarting Neovim, it should be ready to use.
+
 #### Read The Friendly Documentation
 
 Read through the `init.lua` file in your configuration folder for more
