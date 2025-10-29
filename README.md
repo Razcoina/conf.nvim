@@ -125,7 +125,6 @@ as such be installed manually. This configuration uses one such package:
 To install this package, follow these instructions: (Linux only)
 
 ```sh
-cd 
 git clone https://github.com/tomblind/local-lua-debugger-vscode "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/manual/local-lua-debugger-vscode
 cd "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/manual/local-lua-debugger-vscode
 npm install
