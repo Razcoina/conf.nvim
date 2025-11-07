@@ -1880,7 +1880,6 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "nvim-neotest/nvim-nio",
     },
-    ft = { "php", "blade" },
     keys = {
       {
         "<leader>ll",
@@ -1953,6 +1952,7 @@ require("lazy").setup({
         desc = "Laravel: Open Command Center",
       },
     },
+    event = { "VeryLazy" },
     opts = {
       lsp_server = "intelephense",
       features = {
