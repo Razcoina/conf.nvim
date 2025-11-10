@@ -328,7 +328,12 @@ vim.env.ESLINT_D_PPID = vim.fn.getpid()
 -- Set Xdebug idekey to allow for easy debugging
 vim.env.XDEBUG_CONFIG = "idekey=NEOVIM"
 
+-- Optimizations for Go
 vim.env.CGO_ENABLED = "1"
+
+-- Figure out what python venv to use
+local conda_env = os.getenv "CONDA_PREFIX"
+local python_path = conda_prefix and (conda_prefix .. "/bin/python") or vim.fn.exepath "python"
 
 --- Find config file with project override
 --- Checks for a local config in cwd first. If present, return nil (let tool use it).
@@ -1282,7 +1287,7 @@ require("lazy").setup({
       vim.lsp.config("basedpyright", { -- Python
         settings = {
           python = {
-            pythonPath = "/usr/bin/python",
+            pythonPath = python_path,
           },
           basedpyright = {
             disableOrganizeImports = true,
