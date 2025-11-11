@@ -331,10 +331,6 @@ vim.env.XDEBUG_CONFIG = "idekey=NEOVIM"
 -- Optimizations for Go
 vim.env.CGO_ENABLED = "1"
 
--- Figure out what python venv to use
-local conda_env = os.getenv "CONDA_PREFIX"
-local python_path = conda_prefix and (conda_prefix .. "/bin/python") or vim.fn.exepath "python"
-
 --- Find config file with project override
 --- Checks for a local config in cwd first. If present, return nil (let tool use it).
 --- If not, fall back to a global config in stdpath('config').
@@ -827,7 +823,7 @@ require("lazy").setup({
         "lua-language-server", -- lua
         "marksman", -- Markdown
         "intelephense", -- PHP
-        "basedpyright", -- Python
+        "zuban", -- Python
         "bash-language-server", -- Shell
         "taplo", -- TOML
         "vue-language-server", -- Vue
@@ -1284,16 +1280,24 @@ require("lazy").setup({
         },
       })
 
+      vim.lsp.config("zuban", { -- Python
+        cmd_env = {
+          VIRTUAL_ENV = os.getenv "CONDA_PREFIX",
+        },
+      })
+
       vim.lsp.config("basedpyright", { -- Python
         settings = {
           python = {
-            pythonPath = python_path,
+            -- venvPath = "/home/pedrod/.local/share/conda/envs/",
           },
           basedpyright = {
             disableOrganizeImports = true,
             analysis = {
               autoImportCompletions = true,
               autoSearchPaths = true,
+              typeCheckingMode = "recommended",
+              diagnosticMode = "workspace",
             },
           },
         },
@@ -1359,7 +1363,7 @@ require("lazy").setup({
         "lua_ls", -- Lua
         "marksman", -- Markdown
         "intelephense", -- PHP
-        "basedpyright", -- Python
+        "zuban", -- Python
         "bashls", -- Shell
         "taplo", -- TOML
         "vue_ls", -- Vue
