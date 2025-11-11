@@ -1286,23 +1286,6 @@ require("lazy").setup({
         },
       })
 
-      vim.lsp.config("basedpyright", { -- Python
-        settings = {
-          python = {
-            -- venvPath = "/home/pedrod/.local/share/conda/envs/",
-          },
-          basedpyright = {
-            disableOrganizeImports = true,
-            analysis = {
-              autoImportCompletions = true,
-              autoSearchPaths = true,
-              typeCheckingMode = "recommended",
-              diagnosticMode = "workspace",
-            },
-          },
-        },
-      })
-
       vim.lsp.config("bashls", { -- Shell
         filetypes = { "bash", "sh", "zsh" },
       })
