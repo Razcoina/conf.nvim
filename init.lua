@@ -2316,4 +2316,4 @@ vim.api.nvim_set_hl(0, "MatchParen", { fg = "#D0D0D0", bg = "#300594" })
 
 -- Make cursor more visible in different modes
 vim.o.guicursor =
-  "n-v-c-sm:block,i-ci-ve:ver25-blinkon500-blinkoff500,r-cr-o:hor20-blinkon500-blinkoff500,t:block-blinkon500-blinkoff500-TermCursor"
+  "n-v-c-sm:block,i-ci-ve:ver25-blinkon500-blinkoff500,r-cr-o:hor20-blinkon500-blinkoff500,t:block-blinkon500-blinkoff500"
