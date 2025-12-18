@@ -8,6 +8,7 @@ $finder = new Finder()
 ;
 
 return new Config()
+  ->setUnsupportedPhpVersionAllowed(true)
   ->setRules([
     '@PhpCsFixer' => true,
     'no_alias_language_construct_call' => false,
