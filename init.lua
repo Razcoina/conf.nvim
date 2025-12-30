@@ -84,6 +84,9 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Auto-detect arbitrary files
+require "filetype"
+
 -- "undeclared variable" fix for up Laravel
 Laravel = nil
 
@@ -2274,6 +2277,7 @@ require("lazy").setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
+
   require "kickstart.plugins.indent_line",
   require "kickstart.plugins.autopairs",
   require "kickstart.plugins.neo-tree",
