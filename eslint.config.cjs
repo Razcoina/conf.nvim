@@ -35,6 +35,7 @@ module.exports = defineConfig([
       globals:{
         ...globals.browser,
         ...globals.jest,
+        ...globals.node,
       },
     },
     linterOptions: {
